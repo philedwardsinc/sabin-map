@@ -1,24 +1,23 @@
-{
-  "version": 8,
-  "name": "Pink Paper – Clean",
-  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
-  "sources": {
-    "pink_band": {
-      "type": "image",
-      "url": "https://raw.githubusercontent.com/philedwardsinc/sabin-map/854f69a7ea6ea95d6c3662ffb3e869895c9aeb1e/pink_band.png",
-      "coordinates": [[-180, 85], [180, 85], [180, -85], [-180, -85]]
-    },
-    "paper_grain": {
-      "type": "image",
-      "url": "https://raw.githubusercontent.com/philedwardsinc/sabin-map/854f69a7ea6ea95d6c3662ffb3e869895c9aeb1e/paper_grain.png",
-      "coordinates": [[-180, 85], [180, 85], [180, -85], [-180, -85]]
-    }
-  },
-  "layers": [
-    { "id": "bg", "type": "background", "paint": { "background-color": "#efe9dc" } },
-    { "id": "paper-grain", "type": "raster", "source": "paper_grain", "paint": { "raster-opacity": 0.08 } },
-    { "id": "pink-band", "type": "raster", "source": "pink_band", "paint": { "raster-opacity": 0.32 } }
-  ],
-  "center": [0, 20],
-  "zoom": 1.2
-}
+<div id="map" style="position:fixed;inset:0"></div>
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css" rel="stylesheet"/>
+<script>
+mapboxgl.accessToken = 'YOUR_TOKEN';
+const map = new mapboxgl.Map({
+  container: 'map',
+  style: {version:8, sources:{}, layers:[{id:'bg',type:'background',paint:{'background-color':'#efe9dc'}}]},
+  center:[0,20], zoom:1.2
+});
+map.on('load', () => {
+  map.addSource('paper_grain',{type:'image',
+    url:'https://raw.githubusercontent.com/philedwardsinc/sabin-map/854f69a7ea6ea95d6c3662ffb3e869895c9aeb1e/paper_grain.png',
+    coordinates:[[-180,85],[180,85],[180,-85],[-180,-85]]
+  });
+  map.addLayer({id:'paper-grain',type:'raster',source:'paper_grain',paint:{'raster-opacity':0.08}});
+  map.addSource('pink_band',{type:'image',
+    url:'https://raw.githubusercontent.com/philedwardsinc/sabin-map/854f69a7ea6ea95d6c3662ffb3e869895c9aeb1e/pink_band.png',
+    coordinates:[[-180,85],[180,85],[180,-85],[-180,-85]]
+  });
+  map.addLayer({id:'pink-band',type:'raster',source:'pink_band',paint:{'raster-opacity':0.32}});
+});
+</script>

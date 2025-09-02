@@ -5,8 +5,7 @@
   "zoom": 2,
   "bearing": 0,
   "pitch": 0,
-  "sprite": "",
-  "glyphs": "",
+  "glyphs": "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
   "sources": {
     "paper_grain": {
       "type": "image",
@@ -30,26 +29,8 @@
     }
   },
   "layers": [
-    {
-      "id": "bg",
-      "type": "background",
-      "paint": { "background-color": "#f3f3f3" }
-    },
-    {
-      "id": "paper_grain",
-      "type": "raster",
-      "source": "paper_grain",
-      "paint": {
-        "raster-opacity": 0.35
-      }
-    },
-    {
-      "id": "pink_band",
-      "type": "raster",
-      "source": "pink_band",
-      "paint": {
-        "raster-opacity": 0.9
-      }
-    }
+    { "id": "bg", "type": "background", "paint": { "background-color": "#f3f3f3" } },
+    { "id": "paper_grain", "type": "raster", "source": "paper_grain", "paint": { "raster-opacity": 0.35 } },
+    { "id": "pink_band", "type": "raster", "source": "pink_band", "paint": { "raster-opacity": 0.9 } }
   ]
 }

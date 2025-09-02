@@ -1,6 +1,7 @@
 {
   "version": 8,
   "name": "Pink Paper – Clean",
+  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
   "sources": {
     "pink_band": {
       "type": "image",

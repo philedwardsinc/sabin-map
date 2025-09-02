@@ -3,10 +3,7 @@
   "name": "Sabin Sundays - Pink Paper",
   "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
   "sources": {
-    "composite": {
-      "type": "vector",
-      "url": "mapbox://mapbox.mapbox-streets-v8"
-    },
+    "composite": { "type": "vector", "url": "mapbox://mapbox.mapbox-streets-v8" },
     "pink_band": {
       "type": "image",
       "url": "https://raw.githubusercontent.com/philedwardsinc/sabin-map/854f69a7ea6ea95d6c3662ffb3e869895c9aeb1e/pink_band.png",
@@ -19,107 +16,33 @@
     }
   },
   "layers": [
-    {
-      "id": "background",
-      "type": "background",
-      "paint": { "background-color": "#efe9dc" }
-    },
-    {
-      "id": "paper-grain",
-      "type": "raster",
-      "source": "paper_grain",
-      "paint": { "raster-opacity": 0.08 }
-    },
-    {
-      "id": "water",
-      "type": "fill",
-      "source": "composite",
-      "source-layer": "water",
-      "paint": { "fill-color": "#e6e1d6" }
-    },
-    {
-      "id": "park",
-      "type": "fill",
-      "source": "composite",
-      "source-layer": "landuse",
-      "filter": ["==", "class", "park"],
-      "paint": { "fill-color": "#ece6db" }
-    },
-    {
-      "id": "admin",
-      "type": "line",
-      "source": "composite",
-      "source-layer": "admin",
+    { "id": "background", "type": "background", "paint": { "background-color": "#efe9dc" } },
+    { "id": "paper-grain", "type": "raster", "source": "paper_grain", "paint": { "raster-opacity": 0.08 } },
+    { "id": "water", "type": "fill", "source": "composite", "source-layer": "water", "paint": { "fill-color": "#e6e1d6" } },
+    { "id": "park", "type": "fill", "source": "composite", "source-layer": "landuse", "filter": ["==", "class", "park"], "paint": { "fill-color": "#ece6db" } },
+    { "id": "admin", "type": "line", "source": "composite", "source-layer": "admin",
       "filter": ["all", ["==", "maritime", 0], ["in", "admin_level", 1, 2]],
-      "paint": {
-        "line-color": "#111111",
-        "line-opacity": 0.18,
+      "paint": { "line-color": "#111111", "line-opacity": 0.18,
         "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.2, 10, 1.2],
-        "line-dasharray": [2, 2]
-      }
-    },
-    {
-      "id": "road-casing",
-      "type": "line",
-      "source": "composite",
-      "source-layer": "road",
-      "paint": {
-        "line-color": "#bdb6aa",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 5, 0.2, 10, 1.5, 14, 4]
-      }
-    },
-    {
-      "id": "road",
-      "type": "line",
-      "source": "composite",
-      "source-layer": "road",
-      "paint": {
-        "line-color": "#cfc8bc",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 5, 0.1, 10, 1.0, 14, 3]
-      }
-    },
-    {
-      "id": "waterway",
-      "type": "line",
-      "source": "composite",
-      "source-layer": "waterway",
-      "paint": {
-        "line-color": "#d7d2c7",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 8, 0.2, 12, 0.6]
-      }
-    },
-    {
-      "id": "aeroway",
-      "type": "line",
-      "source": "composite",
-      "source-layer": "aeroway",
-      "paint": {
-        "line-color": "#ddd7cc",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 10, 0.2, 14, 1.2]
-      }
-    },
-    {
-      "id": "pink-band",
-      "type": "raster",
-      "source": "pink_band",
-      "paint": { "raster-opacity": 0.32 }
-    },
-    {
-      "id": "place-label",
-      "type": "symbol",
-      "source": "composite",
-      "source-layer": "place_label",
-      "layout": {
-        "text-field": ["coalesce", ["get", "name_en"], ["get", "name"]],
-        "text-font": ["DIN Offc Pro Regular", "Arial Unicode MS Regular"],
-        "text-size": ["interpolate", ["linear"], ["zoom"], 3, 9, 8, 14, 12, 18]
-      },
-      "paint": {
-        "text-color": "#111111",
-        "text-halo-color": "#efe9dc",
-        "text-halo-width": 1.2
-      }
-    }
+        "line-dasharray": [2, 2] } },
+    { "id": "road-casing", "type": "line", "source": "composite", "source-layer": "road",
+      "paint": { "line-color": "#bdb6aa",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 5, 0.2, 10, 1.5, 14, 4] } },
+    { "id": "road", "type": "line", "source": "composite", "source-layer": "road",
+      "paint": { "line-color": "#cfc8bc",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 5, 0.1, 10, 1.0, 14, 3] } },
+    { "id": "waterway", "type": "line", "source": "composite", "source-layer": "waterway",
+      "paint": { "line-color": "#d7d2c7",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 8, 0.2, 12, 0.6] } },
+    { "id": "aeroway", "type": "line", "source": "composite", "source-layer": "aeroway",
+      "paint": { "line-color": "#ddd7cc",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 10, 0.2, 14, 1.2] } },
+    { "id": "pink-band", "type": "raster", "source": "pink_band", "paint": { "raster-opacity": 0.32 } },
+    { "id": "place-label", "type": "symbol", "source": "composite", "source-layer": "place_label",
+      "layout": { "text-field": ["coalesce", ["get", "name_en"], ["get", "name"]],
+        "text-font": ["Noto Serif Regular", "Noto Serif Italic"],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 3, 9, 8, 14, 12, 18] },
+      "paint": { "text-color": "#111111", "text-halo-color": "#efe9dc", "text-halo-width": 1.2 } }
   ],
   "id": "sabin-pink-paper"
 }

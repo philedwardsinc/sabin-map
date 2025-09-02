@@ -9,7 +9,7 @@
     },
     "pink_band": {
       "type": "image",
-      "url": "https://REPLACE_WITH_YOUR_HOST/pink_band.png",
+      "url": "https://raw.githubusercontent.com/philedwardsinc/sabin-map/854f69a7ea6ea95d6c3662ffb3e869895c9aeb1e/pink_band.png",
       "coordinates": [
         [
           -180,
@@ -31,7 +31,7 @@
     },
     "paper_grain": {
       "type": "image",
-      "url": "https://REPLACE_WITH_YOUR_HOST/paper_grain.png",
+      "url": "https://raw.githubusercontent.com/philedwardsinc/sabin-map/854f69a7ea6ea95d6c3662ffb3e869895c9aeb1e/paper_grain.png",
       "coordinates": [
         [
           -180,
